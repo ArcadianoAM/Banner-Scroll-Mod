@@ -1,0 +1,81 @@
+<!-- INCLUDE overall_header.html -->
+
+{L_ACP_BANNER_SCROLL_IMAGE}<br />
+
+<h1>{L_BANNER_SCROLL_TITLE}</h1>
+
+<p>{L_BANNER_SCROLL_INTRO}</p>
+
+<form id="acp_banner_scroll" method="post" action="{U_ACTION}">
+  <fieldset>
+    <legend>{L_BANNER_SCROLL_ENABLE}</legend>
+    
+        <dl>
+			<dt><label for="enable_banner_scroll">{L_BANNER_SCROLL_ENABLE}:</label><br /><span>{L_BANNER_SCROLL_ENABLE_EXPLAIN}<br />{L_BANNER_SCROLL_VERSION} {BANNER_VERSION} {L_BANNER_SCROLL_CHECK}</span></dt>
+			<dd><label><input type="radio" class="radio" name="enable_banner_scroll" value="1"<!-- IF S_BANNER_SCROLL_ENABLED --> id="enable_banner_scroll" checked="checked"<!-- ENDIF --> /> {L_YES}</label>
+				<label><input type="radio" class="radio" name="enable_banner_scroll" value="0"<!-- IF not S_BANNER_SCROLL_ENABLED --> id="enable_banner_scroll" checked="checked"<!-- ENDIF --> /> {L_NO}</label></dd>
+		</dl>
+	
+    <p class="submit-buttons">
+		  <input class="button1" type="submit" id="submit" name="enable_submit" value="{L_SUBMIT}" />&nbsp;
+		  <input class="button2" type="reset" id="reset" name="reset" value="{L_RESET}" />
+    </p>
+    {S_FORM_TOKEN}
+	</fieldset>
+</form>
+
+<form id="acp_banner_scroll" method="post" action="{U_ACTION}">
+  <fieldset>
+    <legend><!-- IF B_EDIT -->{L_BANNER_SCROLL_EDIT}<!-- ELSE -->{L_BANNER_SCROLL_ADD}<!-- ENDIF --></legend>
+  
+    <dl>
+			<dt><label for="name">{L_BANNER_SCROLL_NAME}</label><br /><span>{L_BANNER_SCROLL_NAME_EXPLAIN}</span></dt>
+			<dd><input type="text" size="40" id="name" name="name"<!-- IF B_NAME --> value="{B_NAME}"<!-- ENDIF --> /></dd>
+		</dl>
+		
+		<dl>
+			<dt><label for="url">{L_BANNER_SCROLL_URL}</label><br /><span>{L_BANNER_SCROLL_URL_EXPLAIN}</span></dt>
+			<dd><input type="text" size="40" id="url" name="url"<!-- IF B_URL --> value="{B_URL}"<!-- ENDIF --> /></dd>
+		</dl>
+		
+		<dl>
+			<dt><label for="image">{L_BANNER_SCROLL_IMAGE}</label><br /><span>{L_BANNER_SCROLL_IMAGE_EXPLAIN}</span></dt>
+			<dd><input type="text" size="40" id="image" name="image"<!-- IF B_IMAGE --> value="{B_IMAGE}"<!-- ENDIF --> /></dd>
+		</dl>
+
+    <p class="submit-buttons">
+		  <!-- IF B_EDIT --><input type="hidden" name="edit" value="{B_EDIT}" /><!-- ENDIF -->
+		  <input class="button1" type="submit" id="submit" name="submit" value="{L_SUBMIT}" />&nbsp;
+		  <input class="button2" type="reset" id="reset" name="reset" value="{L_RESET}" />
+    </p>
+    {S_FORM_TOKEN}
+	</fieldset>
+</form>
+
+<table cellspacing="1">
+	<tr>
+		<th>{L_BANNER_SCROLL_IMAGE_B}</th>
+		<th>{L_BANNER_SCROLL_NAME_B}</th>
+		<th>{L_BANNER_SCROLL_URL_B}</th>
+		<th colspan="2">{L_OPTIONS}</th>
+	</tr>
+	<tbody>
+	<!-- BEGIN scroll -->
+		<!-- IF scroll.S_ROW_COUNT is even --><tr class="row1"><!-- ELSE --><tr class="row2"><!-- ENDIF -->
+			<td>&nbsp;<img src="{scroll.B_IMAGE}" style="width: 458px; height: 50px;" />&nbsp;</td>
+			<td>&nbsp;{scroll.B_NAME}</td>
+			<td style="text-align: center;">&nbsp;{scroll.B_URL}&nbsp;</td>
+			<td style="text-align: center;">&nbsp;<a href="{scroll.U_EDIT}">{ICON_EDIT}</a>&nbsp;</td>
+			<td style="text-align: center;">&nbsp;<a href="{scroll.U_DELETE}">{ICON_DELETE}</a>&nbsp;</td>
+		</tr>
+	<!-- END scroll -->
+	</tbody>
+</table>
+<br />
+<div class="panel">
+	<div class="inner"><span class="corners-top"><span></span></span>
+    <div style="text-align: center;">&copy; {L_BANNER_SCROLL_COPYRIGHT} {L_BANNER_SCROLL_VERSION} {BANNER_VERSION}</div>
+	<span class="corners-bottom"><span></span></span></div>
+</div>
+
+<!-- INCLUDE overall_footer.html -->
