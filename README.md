@@ -30,9 +30,6 @@ You can install this on the latest copy of the develop branch ([phpBB 3.1-dev](h
 You can install this on the latest copy of the develop branch ([phpBB 3.1-dev](https://github.com/phpbb/phpbb3)) by following the steps below:
 
 
-> You use this extension at your own risk! There have been cases with certain shared web hosts where a database table could crash for a very large forum. This extension will perform the same functions on your database as phpMyAdmin, so if you have been using phpMyAdmin on your database with no problems, then it should be safe to use this extension. It is always safest to run a backup of your database before performing any Optimize or Repair functions just in case anything goes wrong.
-
-
 ##Uninstallation
 Navigate in the ACP to `Customise -> Extension Management -> Extensions` and click `Purge`.
 
